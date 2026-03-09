@@ -199,14 +199,54 @@ Examples include:
 
 ## Next priorities / 下一步重点
 
-1. Add 10+ real failure cases  
-   增加 10+ 个真实失败案例
-2. Improve notebook retrieval quality  
-   提升 notebook 检索质量
-3. Add metrics such as repeat failure rate and verification coverage  
-   增加重复失败率、验证覆盖率等指标
-4. Add one real OpenClaw integration demo  
-   增加一个真实 OpenClaw 接入 demo
+The project has already moved beyond the earliest PoC stage. The next step is not to add flashy features, but to keep hardening the engineering surface.  
+项目已经不再停留在最早的 PoC 阶段。下一步不是堆花哨功能，而是继续补工程硬度。
+
+1. **Stabilize notebook schema and parser behavior**  
+   **稳定 notebook schema 与 parser 行为**
+   - finish YAML frontmatter migration for all notebooks  
+     完成所有 notebook 的 YAML frontmatter 迁移
+   - add clearer warnings for malformed notebooks  
+     对格式异常的 notebook 增加更明确的 warning
+
+2. **Expand the real-world failure corpus**  
+   **继续扩充真实失败案例语料**
+   - grow beyond the current sample set  
+     在当前样例基础上继续扩容
+   - prioritize OpenClaw / real agent failure cases  
+     优先补充 OpenClaw / 真实 agent 场景失败案例
+
+3. **Improve retrieval quality without over-engineering**  
+   **在不过度设计的前提下提升检索质量**
+   - better ranking logic  
+     更稳的排序逻辑
+   - stronger no-match behavior  
+     更严格的无匹配处理
+   - better title / tag / body weighting  
+     更合理的 title / tag / body 加权
+
+4. **Add reliability metrics**  
+   **增加可靠性指标**
+   - repeat failure rate  
+     重复失败率
+   - notebook hit rate  
+     notebook 命中率
+   - verification coverage  
+     验证覆盖率
+
+5. **Add one real OpenClaw integration demo**  
+   **增加一个真实 OpenClaw 接入 demo**
+   - use real agent failure examples  
+     使用真实 agent 失败样例
+   - show classify → retrieve → verify → trace in a live scenario  
+     在真实场景下展示 classify → retrieve → verify → trace 闭环
+
+6. **Add minimal CI and packaging hygiene**  
+   **补最小 CI 与依赖管理**
+   - automated tests on push  
+     push 时自动跑测试
+   - keep install/run/test commands consistent with the repo state  
+     保持安装 / 运行 / 测试命令与仓库现状一致
 
 ---
 
