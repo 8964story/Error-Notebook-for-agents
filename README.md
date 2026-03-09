@@ -171,10 +171,14 @@ Expected output:
 
 ## Included notebooks / 当前已包含的 notebook
 
-- `errors/api_call/api_key_missing.md`
+- `errors/provider_auth/api_key_missing.md`
 - `errors/file_io/path_not_found.md`
 - `errors/web_scraping/page_loaded_but_no_data.md`
-- `errors/logic/wrong_branch.md`
+- `errors/workflow_or_logic/wrong_branch.md`
+- `errors/provider_auth/provider_mismatch.md`
+- `errors/provider_auth/model_unavailable.md`
+- `errors/transient_network/request_timeout_retry.md`
+- `errors/workflow_or_logic/partial_success_not_verified.md`
 
 ---
 

@@ -4,11 +4,47 @@
     "error": "OpenAI API key missing for request"
   },
   {
+    "name": "provider_mismatch",
+    "error": "Selected provider does not match configured model backend"
+  },
+  {
+    "name": "model_unavailable",
+    "error": "Requested model unavailable for current provider"
+  },
+  {
+    "name": "timeout_retry_success",
+    "error": "Request timed out once, retry later succeeded"
+  },
+  {
+    "name": "timeout_persistent_failure",
+    "error": "Provider request timed out repeatedly and never recovered"
+  },
+  {
     "name": "path_not_found",
     "error": "File not found: config/models.json"
   },
   {
+    "name": "wrong_workdir",
+    "error": "No such file or directory because command ran in wrong working directory"
+  },
+  {
+    "name": "semantic_wrong_target",
+    "error": "models.json exists but points to the wrong semantic target"
+  },
+  {
     "name": "page_loaded_no_data",
     "error": "Browser page loaded but extracted content is empty"
+  },
+  {
+    "name": "selector_missing",
+    "error": "Browser opened but target selector missing from page"
+  },
+  {
+    "name": "partial_success_not_verified",
+    "error": "Task partially succeeded but final artifact was never verified"
+  },
+  {
+    "name": "scheduled_delivery_failure",
+    "error": "cron delivery failed silently and routing never reached the target channel"
   }
 ]
