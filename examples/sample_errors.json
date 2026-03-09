@@ -1,0 +1,14 @@
+[
+  {
+    "name": "api_key_missing",
+    "error": "OpenAI API key missing for request"
+  },
+  {
+    "name": "path_not_found",
+    "error": "File not found: config/models.json"
+  },
+  {
+    "name": "page_loaded_no_data",
+    "error": "Browser page loaded but extracted content is empty"
+  }
+]
