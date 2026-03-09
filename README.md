@@ -115,6 +115,15 @@ Current v0.1 scope includes:
 
 ---
 
+## Installation / 安装
+
+Install dependencies:  
+安装依赖：
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Quick start / 快速开始
 
 Run the demo:  
@@ -122,6 +131,13 @@ Run the demo:
 
 ```bash
 python examples/demo_pipeline.py
+```
+
+Run tests:  
+运行测试：
+
+```bash
+pytest -q
 ```
 
 Expected output:  

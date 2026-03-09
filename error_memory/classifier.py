@@ -1,13 +1,73 @@
 from __future__ import annotations
 
+"""Rule-based error classification for Error Notebook."""
+
+PROVIDER_AUTH_KEYWORDS = {
+    "api key",
+    "auth",
+    "authentication",
+    "unauthorized",
+    "forbidden",
+    "provider",
+    "invalid token",
+    "model unavailable",
+    "unknown model",
+}
+
+TRANSIENT_NETWORK_KEYWORDS = {
+    "timeout",
+    "timed out",
+    "connection reset",
+    "temporarily unavailable",
+    "rate limit",
+    "429",
+    "network error",
+}
+
+FILE_IO_KEYWORDS = {
+    "file not found",
+    "path",
+    "directory",
+    "encoding",
+    "models.json",
+    "config",
+    "no such file",
+}
+
+WEB_SCRAPING_KEYWORDS = {
+    "scrape",
+    "browser",
+    "cloudflare",
+    "page loaded",
+    "extracted content is empty",
+    "selector",
+    "article",
+    "snapshot",
+}
+
+WORKFLOW_OR_LOGIC_KEYWORDS = {
+    "cron",
+    "delivery",
+    "routing",
+    "wrong branch",
+    "partial success",
+    "workflow",
+    "plan",
+}
+
 
 def classify_error(error_text: str) -> str:
+    """Classify raw error text into a coarse failure domain."""
     text = (error_text or "").lower()
 
-    if any(k in text for k in ["timeout", "api key", "auth", "provider", "cron", "delivery"]):
-        return "api_call"
-    if any(k in text for k in ["file not found", "path", "directory", "encoding", "models.json", "config"]):
+    if any(keyword in text for keyword in PROVIDER_AUTH_KEYWORDS):
+        return "provider_auth"
+    if any(keyword in text for keyword in TRANSIENT_NETWORK_KEYWORDS):
+        return "transient_network"
+    if any(keyword in text for keyword in FILE_IO_KEYWORDS):
         return "file_io"
-    if any(k in text for k in ["scrape", "browser", "cloudflare", "page loaded", "extracted content is empty", "selector"]):
+    if any(keyword in text for keyword in WEB_SCRAPING_KEYWORDS):
         return "web_scraping"
-    return "logic"
+    if any(keyword in text for keyword in WORKFLOW_OR_LOGIC_KEYWORDS):
+        return "workflow_or_logic"
+    return "workflow_or_logic"
