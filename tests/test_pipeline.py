@@ -9,7 +9,7 @@ from error_memory.pipeline import handle_error
 
 
 def test_pipeline_no_notebook_match() -> None:
-    result = handle_error("mysterious provider banana vacuum failure")
+    result = handle_error("mysterious banana vacuum failure")
     assert result["error_type"] == "workflow_or_logic"
     assert result["retrieved_notebooks"] == []
     assert result["suggested_fix"] == "No notebook found. Create a new notebook from this failure."
